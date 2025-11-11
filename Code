@@ -1,1 +1,8 @@
-print("hello world")
+import numpy as np
+from sklearn.decomposition import NMF
+
+X = np.random.rand(100, 10)
+nmf = NMF(n_components=3, random_state=42)
+W = nmf.fit_transform(X)
+H = nmf.components_
+print("Decomposition complete")
